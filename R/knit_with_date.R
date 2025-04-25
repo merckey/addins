@@ -9,7 +9,7 @@ knit_with_date <- function() {
   # Get the path of the currently open Rmd file
   rmd_path <- rstudioapi::getActiveDocumentContext()$path
   
-  if (!nzchar(rmd_path) || !grepl("\\.Rmd$", rmd_path)) {
+  if (!nzchar(rmd_path) || !grepl("\\.Rmd$", rmd_path,ignore.case=T)) {
     stop("Please open an R Markdown (.Rmd) file in the editor.")
   }
   
